@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="gallery-wrap">
+        <img src="back.png" id="back">
+    <div class="gallery">
+    <div>
+        <span> <img src="chittor.123.jpg"></span>
+       <span> <img src="clocktower.123.jpg"></span>
+        <span><img src="paderu.143.jpg"></span>
+        </div>
+        <div>
+            <span> <img src="mantralayam.123.jpg"></span>
+           <span> <img src="tyda.123.jpg"></span>
+            <span><img src="vizag.png"></span>
+            </div>
+            </div>
+            <img src="front.png" id="front">
+    </div>
+    <script>
+        let scrollcontainer=document.querySelector(".gallery");
+        let back=document.getElementById("back")
+        let front=document.getElementById("front")
+        scrollcontainer.addEventListener("wheel",(evt)=>{
+            evt.preventDefault();
+            scrollcontainer.scrollLeft+=evt.deltaY
+            scrollcontainer.style.scrollBehavior="auto"
+        });
+        back.addEventListener("click" , ()=>{
+            scrollcontainer.style.scrollBehavior="smooth";
+            scrollcontainer.scrollLeft+=900;
+        });
+        front.addEventListener("click" , ()=>{
+            scrollcontainer.style.scrollBehavior="smooth";
+            scrollcontainer.scrollLeft-=900;
+        });
+    </script>
+</body>
+</html>
